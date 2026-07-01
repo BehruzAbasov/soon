@@ -1,52 +1,114 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Klinikam</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Klinikam - Coming Soon</title>
 
   <style>
     body {
       margin: 0;
       height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(-45deg, #0f172a, #111827, #1e293b, #0b1220);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #ffffff;
+    }
+
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
     .container {
       text-align: center;
+      z-index: 2;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 60px;
+      margin: 0;
+      text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
     }
 
     p {
       font-size: 18px;
       color: #cbd5e1;
+      margin-top: 10px;
     }
 
     .badge {
-      margin-top: 20px;
       display: inline-block;
-      padding: 6px 12px;
-      background: #22c55e;
+      margin-top: 20px;
+      padding: 8px 16px;
       border-radius: 20px;
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid #22c55e;
+      color: #22c55e;
       font-size: 14px;
     }
+
+    /* floating circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.15);
+      animation: float 12s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1) {
+      width: 120px;
+      height: 120px;
+      top: 10%;
+      left: 20%;
+    }
+
+    .circle:nth-child(2) {
+      width: 80px;
+      height: 80px;
+      bottom: 15%;
+      right: 25%;
+    }
+
+    .circle:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      bottom: 10%;
+      left: 10%;
+    }
+
+    @keyframes float {
+      0% {transform: translateY(0);}
+      50% {transform: translateY(-30px);}
+      100% {transform: translateY(0);}
+    }
+
   </style>
 </head>
 
 <body>
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
   <div class="container">
-    <h1>Klinikam</h1>
-    <p>Sizə daha yaxın</p>
-    <div class="badge">🚧 Tezliklə</div>
+    <h1>Klinikam.com</h1>
+    <p>Azərbaycanda klinikaları müqayisə et və düzgün seçim et</p>
+    <div class="badge">🚧 T E Z L İ K L Ə</div>
   </div>
+
 </body>
 </html>
